@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ខា ដានិត ♥ ម៉ៅ ប្រុសមិច</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Moul&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --white:#fffdfd;
+    --cream:#fff8fa;
+    --pink:#e7a1b5;
+    --pink-dark:#a95872;
+    --pink-soft:#f8e5eb;
+    --gold:#c8a45d;
+    --gold-light:#eadbb9;
+    --text:#4d3941;
+    --muted:#806b73;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--white);
+    color:var(--text);
+    font-family:"Kantumruy Pro","Battambang",sans-serif;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fffafb;
+    transition:.8s;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-inner{
+    text-align:center;
+}
+
+.loader-flower{
+    color:var(--gold);
+    font-size:60px;
+    animation:pulse 1.5s infinite;
+}
+
+.loader-inner p{
+    margin-top:10px;
+    color:var(--pink-dark);
+    font-family:"Battambang";
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.12)}
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:20px 0;
+    transition:.4s;
+}
+
+.nav.scrolled{
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(15px);
+    box-shadow:0 5px 30px rgba(70,35,45,.08);
+}
+
+.nav-inner{
+    width:min(1180px,92%);
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-size:14px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    font-family:"Battambang";
+    font-weight:bold;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--pink-dark);
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    font-size:29px;
+    color:var(--pink-dark);
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:var(--cream);
+}
+
+.hero-image{
+    position:absolute;
+    right:0;
+    top:0;
+    width:53%;
+    height:100%;
+    overflow:hidden;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    animation:heroZoom 12s ease-in-out infinite alternate;
+}
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        var(--cream) 0%,
+        rgba(255,248,249,.72) 20%,
+        rgba(255,248,249,.05) 70%
+    );
+}
+
+@keyframes heroZoom{
+    from{transform:scale(1)}
+    to{transform:scale(1.06)}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:min(1180px,92%);
+    margin:auto;
+    padding:130px 0 90px;
+}
+
+.hero-text{
+    width:53%;
+}
+
+.hero-small{
+    color:var(--gold);
+    font-family:"Battambang";
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.hero-line{
+    width:85px;
+    height:2px;
+    background:var(--gold);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:clamp(35px,5vw,65px);
+    line-height:1.9;
+}
+
+.hero h1 .heart{
+    color:var(--gold);
+    font-family:serif;
+    font-size:.7em;
+}
+
+.hero-date{
+    margin-top:10px;
+    color:var(--gold);
+    font-family:"Moul";
+    font-size:21px;
+    line-height:2;
+}
+
+.hero-desc{
+    max-width:620px;
+    margin-top:20px;
+    font-family:"Battambang";
+    font-size:17px;
+    line-height:2.4;
+}
+
+.hero-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:30px;
+    padding:14px 30px;
+    background:var(--pink-dark);
+    color:white;
+    text-decoration:none;
+    font-family:"Battambang";
+    font-weight:bold;
+    transition:.35s;
+}
+
+.hero-btn:hover{
+    background:var(--gold);
+    transform:translateY(-4px);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:105px 0;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+.section-head{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-head small{
+    color:var(--gold);
+    font-family:"Battambang";
+    font-weight:bold;
+}
+
+.section-head h2{
+    margin-top:10px;
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:clamp(27px,4vw,42px);
+    line-height:2;
+}
+
+.gold-line{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:13px;
+    margin-top:12px;
+}
+
+.gold-line span{
+    width:70px;
+    height:1px;
+    background:var(--gold-light);
+}
+
+.gold-line b{
+    color:var(--gold);
+}
+
+/* =========================
+   INVITATION
+========================= */
+
+.invitation{
+    background:#fff;
+}
+
+.invitation-wrap{
+    display:grid;
+    grid-template-columns:42% 58%;
+    min-height:620px;
+    background:var(--cream);
+}
+
+.invitation-photo{
+    position:relative;
+    min-height:550px;
+    overflow:hidden;
+}
+
+.invitation-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.invitation-photo::after{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border:1px solid rgba(255,255,255,.8);
+}
+
+.invitation-text{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:70px;
+    text-align:center;
+}
+
+.invitation-inner{
+    max-width:620px;
+}
+
+.invitation-flower{
+    color:var(--gold);
+    font-size:52px;
+}
+
+.invitation-inner h3{
+    margin:10px 0 20px;
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:29px;
+    line-height:2;
+}
+
+.invitation-inner p{
+    font-family:"Battambang";
+    font-size:17px;
+    line-height:2.5;
+}
+
+.couple-names{
+    margin:25px 0;
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-size:29px;
+    line-height:2.1;
+}
+
+.couple-names span{
+    display:block;
+    color:var(--gold);
+    font-family:serif;
+    font-size:27px;
+}
+
+.invitation-date{
+    display:inline-block;
+    padding:12px 28px;
+    border-top:1px solid var(--gold-light);
+    border-bottom:1px solid var(--gold-light);
+    color:var(--gold);
+    font-family:"Moul";
+    font-size:18px;
+    line-height:2;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section{
+    background:var(--pink-soft);
+}
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.count-box{
+    padding:35px 15px;
+    text-align:center;
+    background:rgba(255,255,255,.8);
+    border:1px solid var(--gold-light);
+}
+
+.count-number{
+    color:var(--pink-dark);
+    font-size:45px;
+    font-weight:700;
+}
+
+.count-label{
+    margin-top:5px;
+    color:var(--muted);
+    font-family:"Battambang";
+    font-weight:bold;
+}
+
+.count-message{
+    text-align:center;
+    margin-top:25px;
+    color:var(--pink-dark);
+    font-family:"Battambang";
+    font-weight:bold;
+}
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple{
+    background:white;
+}
+
+.couple-layout{
+    display:grid;
+    grid-template-columns:1fr 100px 1fr;
+    align-items:center;
+    gap:25px;
+}
+
+.person{
+    text-align:center;
+}
+
+.person-photo{
+    width:280px;
+    height:350px;
+    margin:auto;
+    padding:7px;
+    background:white;
+    border:1px solid var(--gold-light);
+}
+
+.person-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.person h3{
+    margin-top:25px;
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:24px;
+    line-height:2;
+}
+
+.person p{
+    font-family:"Battambang";
+    color:var(--muted);
+}
+
+.center-heart{
+    text-align:center;
+    color:var(--gold);
+    font-size:50px;
+}
+
+/* =====================================================
+   NEW PHOTO GALLERY
+===================================================== */
+
+.gallery{
+    background:
+        radial-gradient(circle at top left,rgba(231,161,181,.12),transparent 30%),
+        #fffafa;
+    overflow:hidden;
+}
+
+.gallery-intro{
+    max-width:680px;
+    margin:-25px auto 55px;
+    text-align:center;
+    color:var(--muted);
+    font-family:"Battambang";
+    line-height:2.3;
+}
+
+/* Main featured photo */
+
+.photo-showcase{
+    position:relative;
+    max-width:1050px;
+    margin:auto;
+}
+
+.main-photo-frame{
+    position:relative;
+    width:100%;
+    height:650px;
+    padding:12px;
+    background:white;
+    border:1px solid var(--gold-light);
+    box-shadow:
+        0 25px 70px rgba(92,43,57,.13);
+}
+
+.main-photo-frame::before{
+    content:"";
+    position:absolute;
+    inset:24px;
+    border:1px solid rgba(200,164,93,.55);
+    z-index:2;
+    pointer-events:none;
+}
+
+.main-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:opacity .35s,transform .7s;
+}
+
+.main-photo.changing{
+    opacity:.2;
+    transform:scale(1.02);
+}
+
+/* decorative corners */
+
+.corner{
+    position:absolute;
+    z-index:4;
+    width:38px;
+    height:38px;
+    border-color:var(--gold);
+    border-style:solid;
+    pointer-events:none;
+}
+
+.corner.tl{
+    top:5px;
+    left:5px;
+    border-width:2px 0 0 2px;
+}
+
+.corner.tr{
+    top:5px;
+    right:5px;
+    border-width:2px 2px 0 0;
+}
+
+.corner.bl{
+    bottom:5px;
+    left:5px;
+    border-width:0 0 2px 2px;
+}
+
+.corner.br{
+    bottom:5px;
+    right:5px;
+    border-width:0 2px 2px 0;
+}
+
+/* Photo title */
+
+.photo-caption{
+    text-align:center;
+    margin:25px auto 30px;
+}
+
+.photo-caption h3{
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:24px;
+    line-height:2;
+}
+
+.photo-caption p{
+    margin-top:5px;
+    color:var(--muted);
+    font-family:"Battambang";
+}
+
+/* Thumbnails */
+
+.thumbnail-wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:1050px;
+    margin:auto;
+}
+
+.thumbnail-list{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(10,1fr);
+    gap:9px;
+}
+
+.thumbnail{
+    position:relative;
+    height:95px;
+    padding:3px;
+    background:white;
+    border:1px solid #eadfe2;
+    cursor:pointer;
+    transition:.35s;
+    overflow:hidden;
+}
+
+.thumbnail img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.88);
+    transition:.35s;
+}
+
+.thumbnail:hover{
+    border-color:var(--gold);
+    transform:translateY(-4px);
+}
+
+.thumbnail:hover img{
+    filter:brightness(1);
+    transform:scale(1.06);
+}
+
+.thumbnail.active{
+    border:2px solid var(--gold);
+    transform:translateY(-5px);
+    box-shadow:0 8px 25px rgba(200,164,93,.22);
+}
+
+.thumbnail.active img{
+    filter:brightness(1);
+}
+
+/* Number over thumbnails */
+
+.thumbnail-number{
+    position:absolute;
+    left:5px;
+    bottom:5px;
+    min-width:22px;
+    height:22px;
+    padding:0 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(91,42,58,.72);
+    color:white;
+    font-size:11px;
+    border-radius:50px;
+}
+
+/* Gallery controls */
+
+.gallery-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-top:28px;
+}
+
+.gallery-arrow{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid var(--gold-light);
+    background:white;
+    color:var(--pink-dark);
+    font-size:25px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery-arrow:hover{
+    background:var(--pink-dark);
+    color:white;
+    border-color:var(--pink-dark);
+    transform:translateY(-3px);
+}
+
+.photo-counter{
+    min-width:120px;
+    text-align:center;
+    color:var(--muted);
+    font-family:"Battambang";
+}
+
+/* =========================
+   PROGRAM
+========================= */
+
+.program{
+    background:white;
+}
+
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:1px;
+    background:var(--gold-light);
+}
+
+.timeline-item{
+    position:relative;
+    width:50%;
+    padding:0 45px 45px;
+}
+
+.timeline-item:nth-child(even){
+    margin-left:50%;
+}
+
+.timeline-dot{
+    position:absolute;
+    top:0;
+    right:-7px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:var(--gold);
+    border:4px solid white;
+    box-shadow:0 0 0 1px var(--gold-light);
+}
+
+.timeline-item:nth-child(even) .timeline-dot{
+    left:-7px;
+}
+
+.timeline-content{
+    padding:28px;
+    background:var(--cream);
+    border:1px solid var(--gold-light);
+}
+
+.timeline-time{
+    color:var(--gold);
+    font-weight:bold;
+    font-size:18px;
+}
+
+.timeline-content h3{
+    margin-top:8px;
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:20px;
+    line-height:2;
+}
+
+.timeline-content p{
+    margin-top:8px;
+    font-family:"Battambang";
+    line-height:2.2;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location{
+    background:var(--pink-soft);
+}
+
+.location-box{
+    max-width:900px;
+    margin:auto;
+    padding:65px 30px;
+    text-align:center;
+    background:white;
+    border:1px solid var(--gold-light);
+}
+
+.location-icon{
+    color:var(--pink-dark);
+    font-size:50px;
+}
+
+.location-box h3{
+    margin-top:10px;
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:26px;
+    line-height:2;
+}
+
+.location-box p{
+    margin-top:12px;
+    color:var(--muted);
+    font-family:"Battambang";
+    line-height:2.3;
+}
+
+/* =========================
+   WISH
+========================= */
+
+.wish{
+    background:
+        linear-gradient(
+            rgba(255,250,251,.92),
+            rgba(255,244,247,.96)
+        ),
+        url("photo10.jpg") center/cover fixed;
+}
+
+.wish-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    padding:30px;
+}
+
+.wish-content h3{
+    color:var(--pink-dark);
+    font-family:"Moul";
+    font-weight:400;
+    font-size:27px;
+    line-height:2;
+}
+
+.wish-content p{
+    margin-top:15px;
+    font-family:"Battambang";
+    font-size:17px;
+    line-height:2.5;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:75px 20px;
+    text-align:center;
+    color:white;
+    background:#a95872;
+}
+
+footer h2{
+    font-family:"Moul";
+    font-weight:400;
+    font-size:25px;
+    line-height:2;
+}
+
+.footer-symbol{
+    margin:12px 0;
+    color:#eadbb9;
+    font-size:45px;
+}
+
+footer p{
+    font-family:"Battambang";
+    line-height:2.2;
+}
+
+/* =========================
+   FULLSCREEN PHOTO
+========================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(15,5,10,.97);
+}
+
+.lightbox.show{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:85vh;
+    border:3px solid white;
+    object-fit:contain;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:10px;
+    color:white;
+    font-size:50px;
+    cursor:pointer;
+}
+
+.light-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:50px;
+    height:50px;
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .9s ease,transform .9s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   TOP
+========================= */
+
+.top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:50%;
+    background:var(--pink-dark);
+    color:white;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    z-index:900;
+    transition:.3s;
+}
+
+.top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        gap:0;
+        background:white;
+        box-shadow:0 15px 30px rgba(60,30,40,.08);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links li{
+        border-top:1px solid #f0e1e5;
+        text-align:center;
+    }
+
+    .nav-links a{
+        display:block;
+        padding:13px;
+    }
+
+    .hero{
+        min-height:900px;
+        align-items:flex-end;
+    }
+
+    .hero-image{
+        width:100%;
+        height:63%;
+        top:0;
+    }
+
+    .hero-image::after{
+        background:linear-gradient(
+            to bottom,
+            rgba(255,248,249,.05),
+            rgba(255,248,249,.35) 45%,
+            var(--cream) 92%
+        );
+    }
+
+    .hero-content{
+        padding:0 0 65px;
+    }
+
+    .hero-text{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero-line{
+        margin:0 auto 20px;
+    }
+
+    .hero-desc{
+        font-size:15px;
+    }
+
+    .invitation-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .invitation-photo{
+        height:430px;
+        min-height:0;
+    }
+
+    .invitation-text{
+        padding:55px 25px;
+    }
+
+    .couple-layout{
+        grid-template-columns:1fr;
+    }
+
+    .center-heart{
+        margin:0;
+    }
+
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    /* New Gallery Mobile */
+
+    .main-photo-frame{
+        height:500px;
+        padding:8px;
+    }
+
+    .main-photo-frame::before{
+        inset:17px;
+    }
+
+    .corner{
+        width:28px;
+        height:28px;
+    }
+
+    .thumbnail-wrap{
+        overflow:hidden;
+    }
+
+    .thumbnail-list{
+        display:flex;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        padding:5px 2px 12px;
+        scrollbar-width:none;
+    }
+
+    .thumbnail-list::-webkit-scrollbar{
+        display:none;
+    }
+
+    .thumbnail{
+        min-width:82px;
+        height:82px;
+        scroll-snap-align:center;
+    }
+
+    .gallery-controls{
+        margin-top:18px;
+    }
+
+    .timeline::before{
+        left:8px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even){
+        width:100%;
+        margin-left:0;
+        padding:0 0 30px 35px;
+    }
+
+    .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot{
+        left:2px;
+        right:auto;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:75px 0;
+    }
+
+    .logo{
+        font-size:10px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero-date{
+        font-size:17px;
+    }
+
+    .hero-desc{
+        line-height:2.2;
+    }
+
+    .person-photo{
+        width:245px;
+        height:310px;
+    }
+
+    .main-photo-frame{
+        height:420px;
+    }
+
+    .gallery-intro{
+        font-size:14px;
+    }
+
+    .photo-caption h3{
+        font-size:20px;
+    }
+
+    .thumbnail{
+        min-width:72px;
+        height:72px;
+    }
+
+    .count-number{
+        font-size:36px;
+    }
+
+    .light-btn{
+        width:40px;
+        height:40px;
+    }
+
+    .prev{
+        left:8px;
+    }
+
+    .next{
+        right:8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+    <div class="loader-inner">
+        <div class="loader-flower">❦</div>
+        <p>សូមស្វាគមន៍មកកាន់មង្គលការរបស់យើងខ្ញុំ</p>
+    </div>
+</div>
+
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+
+    <div class="nav-inner">
+
+        <div class="logo">
+            ខា ដានិត ♥ ម៉ៅ ប្រុសមិច
+        </div>
+
+        <button class="menu" id="menu">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">ទំព័រដើម</a></li>
+            <li><a href="#invitation">សេចក្ដីអញ្ជើញ</a></li>
+            <li><a href="#couple">គូស្វាមីភរិយា</a></li>
+            <li><a href="#gallery">រូបថត</a></li>
+            <li><a href="#program">កម្មវិធី</a></li>
+            <li><a href="#location">ទីតាំង</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-image">
+        <img src="photo1.jpg" alt="រូបថតអាពាហ៍ពិពាហ៍">
+    </div>
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <div class="hero-small">
+                សិរីមង្គលអាពាហ៍ពិពាហ៍
+            </div>
+
+            <div class="hero-line"></div>
+
+            <h1>
+                ខា ដានិត
+                <span class="heart">♥</span>
+                ម៉ៅ ប្រុសមិច
+            </h1>
+
+            <div class="hero-date">
+                ថ្ងៃទី ៧ ខែ មករា ឆ្នាំ ២០២៧
+            </div>
+
+            <p class="hero-desc">
+                ដោយសេចក្ដីស្រឡាញ់ និងក្តីសោមនស្សរីករាយ
+                យើងខ្ញុំសូមគោរពអញ្ជើញលោកអ្នក
+                ចូលរួមជាភ្ញៀវកិត្តិយសក្នុងថ្ងៃដ៏មានសិរីមង្គល
+                នៃជីវិតគូរបស់យើងខ្ញុំ។
+            </p>
+
+            <a href="#invitation" class="hero-btn">
+                សូមអញ្ជើញចូលរួម ♥
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INVITATION -->
+<section class="invitation" id="invitation">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>WEDDING INVITATION</small>
+
+            <h2>សេចក្ដីគោរពអញ្ជើញ</h2>
+
+            <div class="gold-line">
+                <span></span>
+                <b>✦</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <div class="invitation-wrap reveal">
+
+            <div class="invitation-photo">
+                <img src="photo2.jpg" alt="កូនក្រមុំ និងកូនកំលោះ">
+            </div>
+
+            <div class="invitation-text">
+
+                <div class="invitation-inner">
+
+                    <div class="invitation-flower">❦</div>
+
+                    <h3>សូមគោរពអញ្ជើញ</h3>
+
+                    <p>
+                        ឯកឧត្តម លោកជំទាវ លោក លោកស្រី
+                        អ្នកនាងកញ្ញា ព្រមទាំងបងប្អូន
+                        ញាតិមិត្តជិតឆ្ងាយទាំងអស់
+                    </p>
+
+                    <p>
+                        មេត្តាអញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស
+                        ក្នុងពិធីមង្គលការរបស់យើងខ្ញុំ
+                        ដើម្បីជាសាក្សីនៃចំណងស្នេហ៍
+                        និងចូលរួមអបអរសាទរថ្ងៃដ៏ពិសេសនេះ។
+                    </p>
+
+                    <div class="couple-names">
+                        ម៉ៅ ប្រុសមិច
+                        <span>♥</span>
+                        ខា ដានិត
+                    </div>
+
+                    <div class="invitation-date">
+                        ថ្ងៃទី ៧ ខែ មករា ឆ្នាំ ២០២៧
+                    </div>
+
+                    <p style="margin-top:22px;">
+                        ការអញ្ជើញចូលរួមរបស់លោកអ្នក
+                        គឺជាកិត្តិយសដ៏ថ្លៃថ្លាសម្រាប់
+                        យើងខ្ញុំ និងក្រុមគ្រួសារ។
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>SAVE THE DATE</small>
+
+            <h2>រាប់ថយក្រោយទៅថ្ងៃមង្គល</h2>
+
+            <div class="gold-line">
+                <span></span>
+                <b>♥</b>
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="countdown reveal">
+
+            <div class="count-box">
+                <div class="count-number" id="days">០</div>
+                <div class="count-label">ថ្ងៃ</div>
+            </div>
+
+            <div class="count-box">
+                <div class="count-number" id="hours">០</div>
+                <div class="count-label">ម៉ោង</div>
+            </div>
+
+            <div class="count-box">
+                <div class="count-number" id="minutes">០</div>
+                <div class="count-label">នាទី</div>
+            </div>
+
+            <div class="count-box">
+                <div class="count-number" id="seconds">០</div>
+                <div class="count-label">វិនាទី</div>
+            </div>
+
+        </div>
+
+        <div class="count-message" id="countMessage"></div>
+
+    </div>
+
+</section>
+
+
+<!-- COUPLE -->
+<section class="couple" id="couple">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>THE HAPPY COUPLE</small>
+
+            <h2>គូស្វាមីភរិយា</h2>
+
+            <div class="gold-line">
+                <span></span>
+                <b>✦</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <div class="couple-layout">
+
+            <div class="person reveal">
+
+                <div class="person-photo">
+                    <img src="photo3.jpg" alt="កូនកំលោះ">
+                </div>
+
+                <h3>ម៉ៅ ប្រុសមិច</h3>
+
+                <p>កូនកំលោះ</p>
+
+            </div>
+
+
+            <div class="center-heart">
+                ♥
+            </div>
+
+
+            <div class="person reveal">
+
+                <div class="person-photo">
+                    <img src="photo4.jpg" alt="កូនក្រមុំ">
+                </div>
+
+                <h3>ខា ដានិត</h3>
+
+                <p>កូនក្រមុំ</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     NEW ELEGANT PHOTO GALLERY
+================================================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>OUR BEAUTIFUL MEMORIES</small>
+
+            <h2>អនុស្សាវរីយ៍របស់យើង</h2>
+
+            <div class="gold-line">
+                <span></span>
+                <b>♥</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <p class="gallery-intro reveal">
+            រាល់រូបថត គឺជាអនុស្សាវរីយ៍ដ៏មានតម្លៃ
+            ដែលយើងខ្ញុំចង់រក្សាទុកជារៀងរហូត។
+        </p>
+
+
+        <div class="photo-showcase reveal">
+
+            <div class="main-photo-frame">
+
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+
+                <img
+                    id="mainPhoto"
+                    class="main-photo"
+                    src="photo1.jpg"
+                    alt="រូបថតអនុស្សាវរីយ៍"
+                >
+
+            </div>
+
+
+            <div class="photo-caption">
+
+                <h3 id="photoTitle">
+                    អនុស្សាវរីយ៍របស់យើង
+                </h3>
+
+                <p id="photoDescription">
+                    រូបថតទី ១ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត
+                </p>
+
+            </div>
+
+
+            <div class="thumbnail-wrap">
+
+                <div class="thumbnail-list" id="thumbnailList">
+
+                    <div class="thumbnail active" data-index="0">
+                        <img src="photo1.jpg" alt="រូបថត 1">
+                        <span class="thumbnail-number">1</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="1">
+                        <img src="photo2.jpg" alt="រូបថត 2">
+                        <span class="thumbnail-number">2</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="2">
+                        <img src="photo3.jpg" alt="រូបថត 3">
+                        <span class="thumbnail-number">3</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="3">
+                        <img src="photo4.jpg" alt="រូបថត 4">
+                        <span class="thumbnail-number">4</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="4">
+                        <img src="photo5.jpg" alt="រូបថត 5">
+                        <span class="thumbnail-number">5</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="5">
+                        <img src="photo6.jpg" alt="រូបថត 6">
+                        <span class="thumbnail-number">6</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="6">
+                        <img src="photo7.jpg" alt="រូបថត 7">
+                        <span class="thumbnail-number">7</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="7">
+                        <img src="photo8.jpg" alt="រូបថត 8">
+                        <span class="thumbnail-number">8</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="8">
+                        <img src="photo9.jpg" alt="រូបថត 9">
+                        <span class="thumbnail-number">9</span>
+                    </div>
+
+                    <div class="thumbnail" data-index="9">
+                        <img src="photo10.jpg" alt="រូបថត 10">
+                        <span class="thumbnail-number">10</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gallery-controls">
+
+                <button
+                    class="gallery-arrow"
+                    id="prevPhoto"
+                    aria-label="រូបមុន">
+                    ‹
+                </button>
+
+                <div class="photo-counter" id="photoCounter">
+                    ១ / ១០
+                </div>
+
+                <button
+                    class="gallery-arrow"
+                    id="nextPhoto"
+                    aria-label="រូបបន្ទាប់">
+                    ›
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROGRAM -->
+<section class="program" id="program">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>KHMER WEDDING CEREMONY</small>
+
+            <h2>កម្មវិធីមង្គលការខ្មែរ</h2>
+
+            <div class="gold-line">
+                <span></span>
+                <b>✦</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+                        ពេលព្រឹក
+                    </div>
+
+                    <h3>ពិធីជប់លៀង និងទទួលភ្ញៀវ</h3>
+
+                    <p>
+                        អញ្ជើញភ្ញៀវកិត្តិយស
+                        ចូលរួមជួបជុំជាមួយក្រុមគ្រួសារ
+                        និងអបអរសាទរដល់គូស្វាមីភរិយាថ្មី។
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+                        តាមប្រពៃណីខ្មែរ
+                    </div>
+
+                    <h3>ពិធីសំពះផ្ទឹម</h3>
+
+                    <p>
+                        ពិធីប្រសិទ្ធពរជ័យ
+                        និងចងដៃតាមប្រពៃណីខ្មែរ
+                        ជូនពរឱ្យគូស្វាមីភរិយា
+                        មានសុភមង្គលជារៀងរហូត។
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+                        ពេលល្ងាច
+                    </div>
+
+                    <h3>ពិធីជប់លៀង</h3>
+
+                    <p>
+                        អញ្ជើញភ្ញៀវកិត្តិយស
+                        ពិសាភោជនាហារ និងចូលរួមអបអរសាទរ
+                        ក្នុងថ្ងៃដ៏មានសិរីមង្គល។
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+<section class="location" id="location">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>WEDDING LOCATION</small>
+
+            <h2>ទីតាំងប្រារព្ធពិធី</h2>
+
+            <div class="gold-line">
+                <span></span>
+                <b>✦</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <div class="location-box reveal">
+
+            <div class="location-icon">
+                ♡
+            </div>
+
+            <h3>
+                ទីតាំងនឹងបញ្ចូលនៅពេលក្រោយ
+            </h3>
+
+            <p>
+                ព័ត៌មានអាសយដ្ឋាន និង Google Maps
+                អាចបញ្ចូលនៅពេលក្រោយបាន។
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WISH -->
+<section class="wish">
+
+    <div class="container">
+
+        <div class="wish-content reveal">
+
+            <div class="section-head">
+
+                <small>BLESSINGS</small>
+
+                <h2>ពាក្យជូនពរ</h2>
+
+                <div class="gold-line">
+                    <span></span>
+                    <b>♥</b>
+                    <span></span>
+                </div>
+
+            </div>
+
+            <h3>
+                ពីរនាក់ · បេះដូងមួយ · ជីវិតមួយ
+            </h3>
+
+            <p>
+                សូមឱ្យចំណងស្នេហ៍របស់
+                ខា ដានិត និង ម៉ៅ ប្រុសមិច
+                ស្ថិតស្ថេរ និងស្រស់ស្អាត
+                ជារៀងរហូត។
+            </p>
+
+            <p>
+                សូមឱ្យជីវិតគូរបស់អ្នកទាំងពីរ
+                ពោរពេញដោយសេចក្ដីស្រឡាញ់
+                សុភមង្គល សុខភាពល្អ
+                និងភាពចម្រុងចម្រើន។
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h2>
+        ខា ដានិត ♥ ម៉ៅ ប្រុសមិច
+    </h2>
+
+    <div class="footer-symbol">
+        ❦
+    </div>
+
+    <p>
+        ថ្ងៃទី ៧ ខែ មករា ឆ្នាំ ២០២៧
+    </p>
+
+    <p>
+        សូមអរគុណសម្រាប់កិត្តិយស
+        និងការចូលរួមក្នុងថ្ងៃដ៏ពិសេសរបស់យើងខ្ញុំ។
+    </p>
+
+</footer>
+
+
+<!-- FULLSCREEN LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+
+    <div class="close" id="closeLightbox">×</div>
+
+    <button class="light-btn prev" id="lightPrev">
+        ‹
+    </button>
+
+    <img id="lightboxImage" src="" alt="រូបថត">
+
+    <button class="light-btn next" id="lightNext">
+        ›
+    </button>
+
+</div>
+
+
+<!-- TOP -->
+<button class="top" id="top">
+    ↑
+</button>
+
+
+<script>
+
+/* ==========================================
+   LOADER
+========================================== */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loader")
+            .classList.add("hide");
+
+    },700);
+
+});
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+const nav =
+    document.getElementById("nav");
+
+const menu =
+    document.getElementById("menu");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menu.addEventListener("click",function(){
+
+    navLinks.classList.toggle("open");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navLinks.classList.remove("open");
+
+    });
+
+});
+
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 40){
+
+        nav.classList.add("scrolled");
+
+    }else{
+
+        nav.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
+const weddingDate =
+    new Date("January 7, 2027 00:00:00").getTime();
+
+
+const khmerNumbers = [
+    "០","១","២","៣","៤",
+    "៥","៦","៧","៨","៩"
+];
+
+
+function toKhmerNumber(value){
+
+    return String(value)
+        .split("")
+        .map(function(char){
+
+            return khmerNumbers[char] || char;
+
+        })
+        .join("");
+
+}
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const distance =
+        weddingDate - now;
+
+
+    if(distance <= 0){
+
+        document.getElementById("days")
+            .innerText = "០";
+
+        document.getElementById("hours")
+            .innerText = "០";
+
+        document.getElementById("minutes")
+            .innerText = "០";
+
+        document.getElementById("seconds")
+            .innerText = "០";
+
+        document.getElementById("countMessage")
+            .innerText =
+            "🎉 សូមអបអរសាទរ! ថ្ងៃមង្គលបានមកដល់ហើយ! 🎉";
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000 * 60)) /
+            1000
+        );
+
+
+    document.getElementById("days")
+        .innerText =
+        toKhmerNumber(days);
+
+    document.getElementById("hours")
+        .innerText =
+        toKhmerNumber(hours);
+
+    document.getElementById("minutes")
+        .innerText =
+        toKhmerNumber(minutes);
+
+    document.getElementById("seconds")
+        .innerText =
+        toKhmerNumber(seconds);
+
+}
+
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* ==========================================
+   NEW PHOTO GALLERY
+========================================== */
+
+const galleryPhotos = [
+
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg",
+    "photo5.jpg",
+    "photo6.jpg",
+    "photo7.jpg",
+    "photo8.jpg",
+    "photo9.jpg",
+    "photo10.jpg"
+
+];
+
+
+const galleryTitles = [
+
+    "អនុស្សាវរីយ៍របស់យើង",
+    "ថ្ងៃដ៏ស្រស់ស្អាត",
+    "ស្នាមញញឹមរបស់យើង",
+    "ពេលវេលាដ៏មានន័យ",
+    "ជាមួយគ្នាជារៀងរហូត",
+    "សេចក្ដីស្រឡាញ់",
+    "អនុស្សាវរីយ៍ដ៏មានតម្លៃ",
+    "បេះដូងពីរជាមួយគ្នា",
+    "ថ្ងៃដែលយើងចងចាំ",
+    "ស្នេហ៍របស់យើង"
+];
+
+
+const galleryDescriptions = [
+
+    "រូបថតទី ១ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ២ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៣ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៤ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៥ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៦ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៧ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៨ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ៩ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត",
+    "រូបថតទី ១០ នៃអនុស្សាវរីយ៍ដ៏ស្រស់ស្អាត"
+
+];
+
+
+const khmerPhotoNumbers = [
+    "១","២","៣","៤","៥",
+    "៦","៧","៨","៩","១០"
+];
+
+
+let currentPhoto = 0;
+
+
+const mainPhoto =
+    document.getElementById("mainPhoto");
+
+const photoTitle =
+    document.getElementById("photoTitle");
+
+const photoDescription =
+    document.getElementById("photoDescription");
+
+const photoCounter =
+    document.getElementById("photoCounter");
+
+const thumbnails =
+    document.querySelectorAll(".thumbnail");
+
+
+function showGalleryPhoto(index){
+
+    currentPhoto = index;
+
+
+    mainPhoto.classList.add("changing");
+
+
+    setTimeout(function(){
+
+        mainPhoto.src =
+            galleryPhotos[index];
+
+        photoTitle.innerText =
+            galleryTitles[index];
+
+        photoDescription.innerText =
+            galleryDescriptions[index];
+
+        photoCounter.innerText =
+            khmerPhotoNumbers[index] +
+            " / " +
+            khmerPhotoNumbers.length;
+
+
+        mainPhoto.onload = function(){
+
+            mainPhoto.classList.remove("changing");
+
+        };
+
+    },150);
+
+
+    thumbnails.forEach(function(item){
+
+        item.classList.remove("active");
+
+    });
+
+
+    thumbnails[index]
+        .classList.add("active");
+
+
+    thumbnails[index].scrollIntoView({
+        behavior:"smooth",
+        block:"nearest",
+        inline:"center"
+    });
+
+}
+
+
+/* Click thumbnail */
+
+thumbnails.forEach(function(item){
+
+    item.addEventListener("click",function(){
+
+        const index =
+            Number(item.dataset.index);
+
+        showGalleryPhoto(index);
+
+    });
+
+});
+
+
+/* Previous */
+
+document
+    .getElementById("prevPhoto")
+    .addEventListener("click",function(){
+
+        let index =
+            currentPhoto - 1;
+
+        if(index < 0){
+
+            index =
+                galleryPhotos.length - 1;
+
+        }
+
+        showGalleryPhoto(index);
+
+    });
+
+
+/* Next */
+
+document
+    .getElementById("nextPhoto")
+    .addEventListener("click",function(){
+
+        let index =
+            currentPhoto + 1;
+
+        if(index >= galleryPhotos.length){
+
+            index = 0;
+
+        }
+
+        showGalleryPhoto(index);
+
+    });
+
+
+/* ==========================================
+   FULLSCREEN LIGHTBOX
+========================================== */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+
+function openLightbox(){
+
+    lightboxImage.src =
+        galleryPhotos[currentPhoto];
+
+    lightbox.classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeLightbox(){
+
+    lightbox.classList.remove("show");
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+mainPhoto.addEventListener("click",openLightbox);
+
+
+document
+    .getElementById("closeLightbox")
+    .addEventListener("click",closeLightbox);
+
+
+document
+    .getElementById("lightPrev")
+    .addEventListener("click",function(){
+
+        let index =
+            currentPhoto - 1;
+
+        if(index < 0){
+
+            index =
+                galleryPhotos.length - 1;
+
+        }
+
+        showGalleryPhoto(index);
+
+        lightboxImage.src =
+            galleryPhotos[index];
+
+    });
+
+
+document
+    .getElementById("lightNext")
+    .addEventListener("click",function(){
+
+        let index =
+            currentPhoto + 1;
+
+        if(index >= galleryPhotos.length){
+
+            index = 0;
+
+        }
+
+        showGalleryPhoto(index);
+
+        lightboxImage.src =
+            galleryPhotos[index];
+
+    });
+
+
+lightbox.addEventListener("click",function(event){
+
+    if(event.target === lightbox){
+
+        closeLightbox();
+
+    }
+
+});
+
+
+/* ==========================================
+   KEYBOARD
+========================================== */
+
+document.addEventListener("keydown",function(event){
+
+    if(!lightbox.classList.contains("show")){
+        return;
+    }
+
+
+    if(event.key === "Escape"){
+
+        closeLightbox();
+
+    }
+
+
+    if(event.key === "ArrowRight"){
+
+        document
+            .getElementById("lightNext")
+            .click();
+
+    }
+
+
+    if(event.key === "ArrowLeft"){
+
+        document
+            .getElementById("lightPrev")
+            .click();
+
+    }
+
+});
+
+
+/* ==========================================
+   SWIPE ON MOBILE
+========================================== */
+
+let touchStartX = 0;
+
+
+mainPhoto.addEventListener(
+    "touchstart",
+    function(event){
+
+        touchStartX =
+            event.touches[0].clientX;
+
+    },
+    {passive:true}
+);
+
+
+mainPhoto.addEventListener(
+    "touchend",
+    function(event){
+
+        const touchEndX =
+            event.changedTouches[0].clientX;
+
+        const difference =
+            touchStartX - touchEndX;
+
+
+        if(Math.abs(difference) < 50){
+            return;
+        }
+
+
+        if(difference > 0){
+
+            document
+                .getElementById("nextPhoto")
+                .click();
+
+        }else{
+
+            document
+                .getElementById("prevPhoto")
+                .click();
+
+        }
+
+    },
+    {passive:true}
+);
+
+
+/* ==========================================
+   REVEAL ANIMATION
+========================================== */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("show");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+revealElements.forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* ==========================================
+   TOP BUTTON
+========================================== */
+
+const topButton =
+    document.getElementById("top");
+
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 600){
+
+        topButton.classList.add("show");
+
+    }else{
+
+        topButton.classList.remove("show");
+
+    }
+
+});
+
+
+topButton.addEventListener("click",function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
